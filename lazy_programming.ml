@@ -34,7 +34,8 @@ let rec evensFrom n = {hd = n ; tl = Susp (fun () -> evensFrom (n+2))}
 let rec stepNums n k = {hd=n; tl=Susp (fun () -> stepNums (n+k) k)}
                        
 let evens = stepNums 0 2
-  
+
+(* ---------- Power Series ----------- *)
 (*Example: power series: Compute the power series such that 
 if k=2, we get 1, 2, 4, 8, 16...
 if k=3, we get 1, 3, 9, 27, 81...*)
@@ -76,7 +77,8 @@ let rec sfilter' p s =
   let (h, t) = find p s in
   {hd = h;
    tl = Susp (fun () -> sfilter p t) }
-  
+
+(* ---------- Sieve Method to Find All Prime Numbers ----------- *)
 (*find might be useful
 sieve of ertosthenes for prime numbers
 idea: filter out each successive sequence of multiples*) 
